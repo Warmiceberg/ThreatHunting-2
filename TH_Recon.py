@@ -2,7 +2,7 @@ from ipwhois import IPWhois
 from pprint import pprint
 import csv
 with open("Whois_Output.csv","wb") as csvfile:
-	writer = csv.writer(csvfile, delimiter='~', quoting=csv.QUOTE_MINIMAL)
+	writer = csv.writer(csvfile, delimiter=';', quoting=csv.QUOTE_MINIMAL)
 	writer.writerow(['IP Address', 'Org Name', 'Org Country', 'Org Address', 'Description'])
 	with open("iplist.txt","r") as f:
 		iplst = f.readlines()
