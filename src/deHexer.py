@@ -3,7 +3,8 @@ pth = raw_input("Enter the obfuscated file - ")
 with open(pth,'r') as f:
     with open("final.txt", "a") as w:
         for line in f:
-            for word in line.split():
+            for word in line.split(';'):
+                word = word.replace('_', '')
                 try:
                     if re.match(r'^\\x', word):
                         print "word " + word
