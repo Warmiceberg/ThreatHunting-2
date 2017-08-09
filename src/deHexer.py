@@ -6,6 +6,7 @@ with open(pth,'r') as f:
             line = line.replace('\\x',';\\x')
             line = line.replace('\(','\(;')
             line = line.replace('\)','\;)')
+            line = line.replace("'",";'")
             for word in line.split(';'):
                 word = word.replace('_', '')
                 print word
