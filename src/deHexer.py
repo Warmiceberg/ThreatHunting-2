@@ -3,6 +3,7 @@ pth = raw_input("Enter the obfuscated file - ")
 with open(pth,'r') as f:
     with open("final.txt", "w") as w:
         for line in f:
+            line = line.replace('\\x',';\\x')
             line = line.replace('\(','\(;')
             line = line.replace('\)','\;)')
             for word in line.split(';'):
